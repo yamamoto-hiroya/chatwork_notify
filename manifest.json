@@ -1,0 +1,24 @@
+{
+    // 拡張機能の定義
+    "manifest_version": 2,  // マニフェストのバージョン
+    "name": "chatwork_notify", // 拡張機能の名称
+    "version": "1.1", // 拡張機能のバージョン
+ 
+    "description": "chatworkのオリジナル通知機能を追加する拡張",  // 拡張機能の概要
+ 
+    // アイコンの設定
+    "icons": {
+        "16": "icons/icon.png", // 16×16[px]アイコンファイルのパス
+        "48": "icons/icon.png", // 48×48[px]アイコンファイルのパス
+        "128": "icons/icon.png" // 128×128[px]アイコンファイルのパス
+    },
+ 
+    // スクリプトの設定
+    "content_scripts": [
+        {
+            "matches": ["https://www.chatwork.com/*"],  // 拡張機能を適用するURLパターン
+            "js": ["js/jquery-2.1.1.min.js", "js/chatwork_notify.js"], // 使用するjsのパス
+            "run_at": "document_end"
+        }
+    ]
+}
